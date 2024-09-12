@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #242424;
+    background-image: url("img/image3.png");
+    background-attachment: fixed;
+    background-size: 100%;
+    color: #cdcdcd;
+    font-family: "Avenir Next", "Avenir", sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+header, main, footer {
+    max-width: 100%;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+article {
+    margin-bottom: 30px;
+    background-color: rgba(35, 35, 35, 0.8);
+    border-radius: 15px;
+    box-shadow: 5px 5px 8px #1e1e1e;
+}
+
+article:hover {
+    background-color: rgba(35, 35, 35, 1);
+    transition: 0.3s ease-in-out;
+
+}
+
+.article-title {
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    padding: 30px;
+}
+
+.article-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.article-paragraph {
+    flex: 1;
+    text-align: justify;
+    padding: 10px;
+    margin: 20px;
+    font-size: larger;
+    line-height: 1.5;
+}
+
+.NosSalles img {
+    max-height: 250px;
+    height: auto;
+
+}
+
+.NosSalles div {
+    display: flex;
+    justify-content: space-around;
+}
+.article-contentNosSalles{
+    display: flex;
+    flex-direction: column;
+}
+.Boite{
+    flex-direction:column ;
+    align-items: center;
+}
+
+.article-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    margin: 20px;
+}
+.Boite p{
+    margin:15px ;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+#Chrono img{
+    height: 240px;
+}
+
+/*Définis la taille de l'image de la salle 1 parce qu'elle est en portrait*/
+article.Salle2 img {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    font-size: medium;
+    padding: 10px;
+    padding-bottom: 30px;
+}
+footer > p{
+    padding-top: 15px;
+}
+
+
+
+/*menu */
+
+nav{
+    /*width: 100%;*/
+    margin: 0 auto;
+    background-color: white;
+    position: sticky;
+    top: 0;
+
+    animation-duration: 1s;
+    animation-name: apparition;
+}
+
+@keyframes apparition {
+    from{
+        width: 25%;
+        opacity: 0;
+        visibility : hidden;
+    }
+
+    to{
+        width: 100%;
+
+        transition:
+                opacity 0.4s ease-out,
+                visibility 0.4s ease-out;
+    }
+}
+
+nav:hover{
+    border-radius: 5px 5px 0 5px;
+}
+
+nav:not(:hover){
+    border-radius: 5px;
+}
+
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li{      /*MISE EN FORME HORIZTONTAL DU MENU*/
+    width: 25%;
+    text-align: center;
+    position: relative;
+}
+
+nav ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/*COULEUR DES TEXTE*/
+nav a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a:hover{
+    color: #333;  /*COULEUR DU TEXTE du titre*/
+}
+
+nav > ul li a:hover{
+    border-bottom: #484848 solid 3px;
+    transition:
+            border-bottom-color 0.4s ease-out;
+}
+
+.sousmenu{      /*MENU DEROULANT (contient les different selection*/
+    display: none;
+    box-shadow: 0 1px 2px #CCC;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+
+    border-radius: 0 0 15px 15px;
+}
+
+
+nav > ul li:hover .sousmenu{
+    display: block;
+
+    transition:
+            opacity 0.4s ease-out,
+            visibility 0.4s ease-out;
+}
+
+nav > ul li:not(:hover) .sousmenu{
+    display: block;
+
+    opacity: 0;
+    visibility : hidden;
+    transition:
+            opacity 0.4s ease-out,
+            visibility 0.4s ease-out;
+}
+
+
+
+
+.sousmenu li{       /*A enlver car esthétique*/
+    width: 100%;
+    text-align: left;
+}
+
+
+.sousmenu a{
+    padding: 10px;
+    border-bottom: none;
+}
+.sousmenu a:hover{
+    border-bottom: none;
+    background-color: RGBa(192,192,192,0.1);
+}
+
